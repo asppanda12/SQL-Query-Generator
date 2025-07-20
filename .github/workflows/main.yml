@@ -1,4 +1,4 @@
-name: Make GitHub Graph Green
+name: Fixing Bugs Auto
 
 on:
   schedule:
@@ -18,9 +18,12 @@ jobs:
           git config --global user.name "sameer.panda"
           git config --global user.email "sameerpandausa@gmail.com"
 
-      - name: Make a fake update
+      - name: Fixing Crucial Bugs
         run: |
-          echo "Green tick done" >> activity.log
-          git add activity.log
-          git commit -m "chore: keep contribution graph green"
-          git push
+          DAY_NUM=$(date -u +%u)
+          echo "Today is day number: $DAY_NUM"
+          for i in $(seq 1 $DAY_NUM); do
+              echo "Green tick $i on $(date -u)" >> activity.log
+              git add activity.log
+              git commit -m "chore: Fixing Cruicial Bug"
+              git push
