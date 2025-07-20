@@ -23,7 +23,8 @@ jobs:
           DAY_NUM=$(date -u +%u)
           echo "Today is day number: $DAY_NUM"
           for i in $(seq 1 $DAY_NUM); do
-              echo "Green tick $i on $(date -u)" >> activity.log
-              git add activity.log
-              git commit -m "chore: Fixing Cruicial Bug"
-              git push
+            echo "Green tick $i on $(date -u)" >> activity.log
+            git add activity.log
+            git commit -m "chore: Fixing Crucial Bug #$i" || echo "Nothing to commit"
+            git push
+          done
