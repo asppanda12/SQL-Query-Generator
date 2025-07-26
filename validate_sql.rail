@@ -1,0 +1,11 @@
+<rail version="0.1">
+<output>
+    <string name="validated_sql" description="A safe SQL query without DDL or unsafe operations." format="sql" />
+</output>
+<prompt messages="true">
+You are an expert SQL validator. Ensure that the SQL query provided by the LLM does not contain any DDL operations like DROP, DELETE, TRUNCATE, ALTER, or other potentially destructive statements. Return a safe SQL query.
+
+Query:
+${sql_input}
+</prompt>
+</rail>

@@ -1,0 +1,14 @@
+<rail version="0.1">
+  <output>
+    <string name="plot_code" description="Python code to safely generate a matplotlib chart without unsafe operations." format="python" />
+  </output>
+  <prompt messages="true">
+    You are a Python code safety checker. Ensure the matplotlib code is safe (no file system access, subprocess, etc.). Return a clean version of the code.
+
+    User request:
+    ${user_prompt}
+
+    Code:
+    ${messages[-1].content}
+  </prompt>
+</rail>
